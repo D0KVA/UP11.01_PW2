@@ -1,142 +1,11 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+{% extends  'base.html'%}
+{% load static %}
 
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
+{% block title_name%}
+    Подтверждение удаления предмета
+{% endblock%}
 
-        .header {
-            background: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #6e8efb;
-            text-decoration: none;
-        }
-
-        .nav a {
-            color: #6e8efb;
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .nav a:hover {
-            color: #a777e3;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 3rem auto;
-            padding: 0 20px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: #6e8efb;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            color: #555;
-            text-align: center;
-        }
-
-        .actions {
-            display: flex;
-            justify-content: center;
-            gap: 0.8rem;
-            margin-top: 1.5rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            color: white;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            box-shadow: 0 3px 8px rgba(111, 142, 251, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(111, 142, 251, 0.4);
-        }
-
-        .btn.delete {
-            background: #e57373;
-            box-shadow: 0 3px 8px rgba(229, 115, 115, 0.3);
-        }
-
-        .btn.cancel {
-            background: #b0bec5;
-            box-shadow: 0 3px 8px rgba(176, 190, 197, 0.3);
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <div class="header-container">
-            <nav class="nav">
-                <a href="{% url 'product_list_view' %}">Предметы</a>
-                <a href="{% url 'suppliers_list_view' %}">Поставщики</a>
-                <a href="{% url 'brands_list_view' %}">Бренды</a>
-                <a href="{% url 'categories_list_view' %}">Категории</a>
-                <a href="{% url 'collections_list_view' %}">Коллекции</a>
-                <a href="{% url 'customers_list_view' %}">Покупатели</a>
-            </nav>
-        </div>
-    </header>
+{% block content %}
     <div class="container">
         <div class="card">
             <h2>Удалить {{ object.name }}</h2>
@@ -150,5 +19,4 @@
             </form>
         </div>
     </div>
-</body>
-</html>
+{% endblock%}

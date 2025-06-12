@@ -1,0 +1,17 @@
+<header>
+        <div class="header-content">
+            <h1>Добро пожаловать на EzkhereSHOP</h1>
+            <p class="tagline">Это прекрасный сайт для покупки атрибутики из игр</p>
+        </div>
+</header>
+<nav>
+        <div class="nav-container">
+            <a href="{% url "general_view" %}" class="logo">EzkhereSHOP</a>
+            <ul class="nav-links">
+                <li><a href="{% url "general_view" %}">Главная</a></li>
+                <li><a href="{% url "company_view" %}">О компании</a></li>
+                <li><a href="{% url "items_view" %}">Товары</a></li>
+                <li><a href="{% url "basket_view" %}">Корзина</a></li>
+            </ul>
+        </div>
+</nav>
